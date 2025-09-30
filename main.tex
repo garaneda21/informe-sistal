@@ -1,0 +1,167 @@
+% Formato de la hoja
+\documentclass[letterpaper, 12pt, oneside]{book} % carta, letra: 12
+\renewcommand{\baselinestretch}{1.5} % Interlineado general
+\usepackage[margin=2.5cm, top=4cm, left=4cm]{geometry}
+
+% Fuente 
+%\usepackage{fontspec}
+%\setmainfont{Arial}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[T1]{fontenc}
+
+% Para insertar Imágenes
+\usepackage{graphicx}
+\graphicspath{{./figuras/}}
+
+% Paquetes
+\usepackage[english, spanish, es-tabla]{babel} % configuración en español
+\usepackage{wrapfig} % envolver imágenes alrededor de texto
+\usepackage{setspace} % opciones de espaciado
+\usepackage{parskip} % formato de texto con salto de párrafo
+\usepackage{tabularx} % mejores tablas
+\usepackage[dvipsnames, table]{xcolor} % definir colores
+\usepackage{hyperref} % insertar enlaces dentro del documento
+\usepackage{xurl} % insertar url's directamente
+\usepackage{verbatim} % para usar texto monoespaciado como código
+\usepackage{listings} % para formatear texto como código
+\usepackage{xcolor} % definir colores
+\usepackage{enumitem} % para configurar los entornos enumerate, itemize.
+\usepackage[titletoc]{appendix} % definir el apéndice
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[export]{adjustbox}
+
+\definecolor{light-gray}{gray}{0.95}
+
+% Colores de Enlaces (Links)
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+% Configuración del estilo de código
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray}\itshape,
+    stringstyle=\color{teal},
+    backgroundcolor=\color{light-gray},
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    breaklines=true,
+    tabsize=4,
+    showstringspaces=false
+    aboveskip=5pt,
+    belowskip=5pt,
+    lineskip=-1pt
+}
+
+% Modificar Headers y Footers
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} % quitar línea superior
+\fancyfoot[R]{\thepage}
+\fancypagestyle{plain}{}
+
+% Para la bibliografía
+\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+\usepackage{csquotes}
+\addbibresource{referencias.bib}
+
+%%% COMANDOS PERSONALIZADOS %%% 
+
+% \sourcefig{nombre}{año}{url} : para insertar una fuente a una figura
+\newcommand{\sourcefig}[3]{
+    \caption*{\footnotesize \textbf{Fuente: #1, #2, Enlace:} \url{#3}}%
+}
+% \code{} : para insertar una palabra de texto monoespaciada, como documentación
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INICIO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% PAGINAS PRINCIPALES
+    % Derecho de Autor
+    % Calificación
+    % Dedicatoria (optativo)
+    % Tabla de Contenido
+    % Índice de Tablas
+    % Índice de Ilustraciones
+    % Resumen
+    % Abstract
+% TEXTO
+    % Cuerpo de Obra
+    % Citas
+    % Notas
+    % Conclusiones
+% PÁGINAS FINALES
+    % Bibliografía
+    % Glosario ?????
+    % Anexos
+
+% DIAGRAMACIÓN DEL TEXTO
+%   Para diagramar el texto se deben seguir las siguientes normas:
+%   - Inicio de cada capítulo en una nueva página.
+%   - Inicio de los títulos en la parte superior de la página, en margen centrado, letras mayúsculas y en negrita.
+%   - Inicio del texto después de dos espacios bajo el título.
+%   - Inicio de cada párrafo con una sangría de 5 espacios.
+%   - Un espacio entre párrafos.
+%   - Texto sólo por un lado de la hoja.
+%   - Utilización de reglas gramaticales para separación de sílabas.
+%   - Uso de mayúsculas en los títulos de las páginas preliminares.
+%   - Uso de minúsculas en subtítulos, con excepción de la primera letra de la primera palabra y
+%   - sustantivos propios
+
+% ESPACIAMIENTO
+% El texto de la tesis se escribe en espacio de 1,5 líneas, exceptuando los siguientes casos:
+% - Textos a espacio simple: notas y citas textuales; párrafos de listas; índices de ilustraciones y tablas; y anexos.
+% - Textos a espacio doble: bibliografía.
+    
+\begin{document}
+
+    % ================ Preliminares ====================
+    \frontmatter % números romanos
+    
+    \include{preliminar/portada}
+    \setcounter{page}{2}
+
+    \include{preliminar/copyright}
+    \include{preliminar/calificaciones}
+    \chapter*{Dedicatoria}
+
+    \begin{singlespace}
+        \tableofcontents
+        \listoftables
+        \listoffigures
+    \end{singlespace}
+
+    \include{preliminar/resumen}  
+    
+    % ================ Cuerpo ==========================
+    \mainmatter % números arábigos
+
+    \include{introduccion}
+    
+    \include{capitulo-1}
+    % \include{capitulo-2}
+    
+    \include{conclusiones}
+
+    % \include{cheatsheet}
+    % ================ Bibliografía ====================
+
+    \printbibliography[heading=bibintoc]
+    
+    % ================ Apendice ========================
+    % Apendice
+    % \include{apendice}
+    
+\end{document}
