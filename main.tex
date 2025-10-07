@@ -31,7 +31,6 @@
 \usepackage{caption}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-\usepackage[export]{adjustbox}
 
 \definecolor{light-gray}{gray}{0.95}
 
@@ -129,13 +128,14 @@
 
     % ================ Preliminares ====================
     \frontmatter % números romanos
-    
+
     \include{preliminar/portada}
     \setcounter{page}{2}
 
     \include{preliminar/copyright}
     \include{preliminar/calificaciones}
-    \chapter*{Dedicatoria}
+
+    % \chapter*{Dedicatoria}
 
     \begin{singlespace}
         \tableofcontents
@@ -143,25 +143,28 @@
         \listoffigures
     \end{singlespace}
 
-    \include{preliminar/resumen}  
-    
+    \include{preliminar/resumen}
+
     % ================ Cuerpo ==========================
     \mainmatter % números arábigos
 
     \include{introduccion}
-    
+
     \include{capitulo-1}
-    % \include{capitulo-2}
-    
+
+    \include{capitulo-2}
+
+    \include{capitulo-3}
+
     \include{conclusiones}
 
     % \include{cheatsheet}
     % ================ Bibliografía ====================
 
-    \printbibliography[heading=bibintoc]
-    
+    % \printbibliography[heading=bibintoc]
+
     % ================ Apendice ========================
     % Apendice
     % \include{apendice}
-    
+
 \end{document}
