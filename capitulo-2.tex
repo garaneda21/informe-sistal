@@ -1,3 +1,114 @@
 \chapter{Marco Teórico}
 
-hola
+\section{Área en estudio}
+
+% En esta sección se describe el contexto general en el que se enmarca el proyecto, abordando el ámbito de los sistemas de gestión de uniformes corporativos y su relación con la gestión de recursos institucionales.
+% Se puede incluir:
+% 
+% Breve descripción del dominio (gestión de uniformes, pedidos, tallajes, logística).
+% 
+% Importancia de la digitalización y automatización en la gestión de dotaciones.
+% 
+% Tendencias actuales en la gestión de inventarios y confección bajo demanda.
+
+El presente trabajo se enmarca dentro del área de Ingeniería de Software, específicamente en el diseño y modernización de arquitecturas de sistemas de información.
+El estudio aborda la reingeniería del sistema SISTAL, una plataforma web de gestión de uniformes corporativos, con el objetivo de transformar su estructura monolítica en una arquitectura basada en microservicios en la nube, utilizando prácticas y herramientas modernas de desarrollo, despliegue y mantenimiento de software.
+
+Esta área contempla aspectos relacionados con la arquitectura de software, gestión de proyectos tecnológicos, seguridad de la información, DevOps e infraestructura en la nube, los cuales permiten optimizar la eficiencia operativa, escalabilidad y sostenibilidad técnica del sistema.
+
+\section{Objetivos generales del área}
+
+% Aquí se explican los propósitos del estudio teórico, como comprender las bases tecnológicas y metodológicas necesarias para rediseñar SISTAL.
+% Ejemplo de redacción:
+    % El objetivo del área teórica es analizar los fundamentos tecnológicos, arquitectónicos y metodológicos que permitan definir una propuesta de reestructuración del sistema SISTAL bajo un enfoque moderno, escalable y alineado con las necesidades del negocio.
+
+El objetivo del área teórica es analizar los fundamentos tecnológicos, arquitectónicos y metodológicos que permitan definir una propuesta de reestructuración del sistema SISTAL alineado con las necesidades del negocio.
+Este marco busca establecer las bases para el diseño de una arquitectura escalable, modular y flexible, apoyada en microservicios, computación en la nube y prácticas DevOps, que permita mejorar la eficiencia operativa, la mantenibilidad y la continuidad del servicio.
+
+\section{Fundamentos Tecnológicos y Metodológicos del Proyecto}
+
+La reestructuración del sistema SISTAL requiere comprender los fundamentos de los sistemas de información modernos, las arquitecturas de software orientadas a servicios y las metodologías que facilitan su desarrollo, despliegue y mantenimiento. A continuación, se describen los conceptos clave que orientan el diseño de la nueva solución.
+
+... \textit{pendiente}
+
+\begin{comment}
+    \subsection{Sistemas de Información y su Rol en la Gestión Organizacional}
+
+    Un \textit{sistema de información} es un conjunto integrado de componentes que permite capturar, procesar, almacenar y distribuir información para apoyar la toma de decisiones y el control dentro de una organización. Estos sistemas combinan personas, procesos, datos y tecnología, buscando mejorar la eficiencia operativa y la calidad del servicio.
+
+    En el caso de la gestión de uniformes, un sistema de información como SISTAL facilita la trazabilidad de pedidos, la personalización de tallas y la coordinación entre los distintos actores involucrados (funcionarios, administradores y proveedores). Su adecuada arquitectura es esencial para garantizar la continuidad y confiabilidad de los procesos institucionales.
+
+    \subsection{Arquitectura de Software}
+
+    La \textit{arquitectura de software} define la estructura organizativa de un sistema y las relaciones entre sus componentes. Un diseño arquitectónico adecuado permite alcanzar cualidades como mantenibilidad, escalabilidad y flexibilidad ante cambios futuros.
+
+    Tradicionalmente, muchos sistemas como SISTAL se desarrollaron bajo un \textit{modelo monolítico}, en el cual todas las funcionalidades están estrechamente integradas en una única aplicación. Si bien este enfoque simplifica el despliegue inicial, con el tiempo dificulta la incorporación de nuevas características, la escalabilidad independiente de módulos y la adopción de tecnologías modernas.
+
+    \subsection{Arquitectura Basada en Microservicios}
+
+    La \textit{arquitectura de microservicios} surge como una evolución del enfoque monolítico. Se caracteriza por descomponer el sistema en servicios pequeños, independientes y especializados, que se comunican entre sí mediante \textbf{interfaces bien definidas (APIs)}. Cada microservicio puede ser desarrollado, desplegado y escalado de forma autónoma, utilizando incluso diferentes tecnologías según sus requerimientos.
+
+    Entre sus principales ventajas se encuentran:
+    \begin{itemize}
+        \item Mayor \textbf{escalabilidad} y facilidad para distribuir la carga de trabajo.
+        \item Mejor \textbf{mantenibilidad}, al aislar los cambios en componentes específicos.
+        \item Despliegues \textbf{más ágiles y seguros}, al no afectar todo el sistema.
+    \end{itemize}
+
+    Este enfoque se alinea plenamente con los objetivos del proyecto, ya que permite que SISTAL evolucione hacia una plataforma modular y adaptable a las demandas futuras.
+
+    \subsection{Computación en la Nube}
+
+    La \textit{computación en la nube} proporciona recursos de infraestructura, plataforma y software bajo demanda, lo que permite implementar soluciones escalables sin necesidad de invertir en hardware físico.
+
+    Los tres modelos de servicio más comunes son:
+    \begin{itemize}
+        \item \textbf{IaaS (Infraestructura como Servicio):} Provisión de recursos básicos como máquinas virtuales y almacenamiento.
+        \item \textbf{PaaS (Plataforma como Servicio):} Entornos de desarrollo y despliegue administrados.
+        \item \textbf{SaaS (Software como Servicio):} Aplicaciones completas ofrecidas al usuario final a través de internet.
+    \end{itemize}
+
+    La adopción de una arquitectura basada en la nube permitirá que SISTAL reduzca costos de infraestructura, mejore la disponibilidad del servicio y optimice su capacidad de respuesta ante la demanda.
+
+    \subsection{Contenedores y Orquestación}
+
+    Los \textit{contenedores} son entornos ligeros que encapsulan una aplicación y todas sus dependencias, garantizando que se ejecute de manera uniforme en distintos entornos. Herramientas como \textbf{Docker} han revolucionado el despliegue de aplicaciones al facilitar la portabilidad y la replicación.
+
+    La \textit{orquestación de contenedores}, mediante plataformas como \textbf{Kubernetes}, permite gestionar automáticamente el escalado, balanceo de carga, actualización y recuperación de servicios. Esto resulta esencial en arquitecturas de microservicios, donde la coordinación entre múltiples contenedores es crítica para mantener la estabilidad del sistema.
+
+    \subsection{Metodologías DevOps}
+
+    El enfoque \textbf{DevOps} promueve la integración entre los equipos de desarrollo (Dev) y operaciones (Ops) para lograr entregas continuas, automatización del ciclo de vida del software y una mejora constante del servicio.
+
+    Entre sus principales prácticas se incluyen:
+    \begin{itemize}
+        \item \textbf{Integración continua (CI):} validación automática del código a medida que se desarrolla.
+        \item \textbf{Entrega continua (CD):} despliegue rápido y controlado de nuevas versiones.
+        \item \textbf{Monitoreo continuo:} supervisión proactiva del desempeño del sistema.
+    \end{itemize}
+
+    Aplicar DevOps en la reestructuración de SISTAL favorecerá una gestión más ágil de versiones, mayor estabilidad operativa y un mantenimiento preventivo del sistema.
+
+    \subsection{Reingeniería de Software}
+
+    La \textit{reingeniería de software} consiste en el análisis y rediseño de un sistema existente para mejorar su estructura interna, rendimiento y adaptabilidad sin alterar sus funciones esenciales. A diferencia de una migración total, la reingeniería busca \textbf{preservar el conocimiento del negocio}, optimizando la arquitectura y el código para cumplir con los estándares actuales de calidad y eficiencia.
+
+    En el caso de SISTAL, la reingeniería implica rediseñar su arquitectura hacia un modelo distribuido en microservicios, manteniendo la lógica de negocio central y modernizando la infraestructura tecnológica.
+
+    \subsection{Tecnologías y Herramientas Asociadas}
+
+    El desarrollo del nuevo SISTAL se apoyará en tecnologías ampliamente utilizadas en entornos empresariales modernos, tales como:
+    \begin{itemize}
+        \item \textbf{Lenguajes y frameworks:} Java/Spring Boot, Node.js, React.
+        \item \textbf{Bases de datos:} PostgreSQL, MongoDB.
+        \item \textbf{Contenedores y orquestación:} Docker, Kubernetes.
+        \item \textbf{Control de versiones y automatización:} Git, Jenkins, GitLab CI/CD.
+        \item \textbf{Infraestructura en la nube:} AWS, Azure o Google Cloud.
+    \end{itemize}
+
+    Estas herramientas contribuirán a garantizar la estabilidad, escalabilidad y mantenibilidad del sistema rediseñado.
+
+    \subsection{Síntesis del Marco Teórico}
+
+    Los conceptos presentados conforman la base conceptual y tecnológica que orienta el rediseño del sistema SISTAL. La integración de microservicios, computación en la nube, contenedores y prácticas DevOps ofrece una plataforma sólida para construir un sistema más eficiente, escalable y alineado con las necesidades actuales y futuras de la organización.
+\end{comment}
