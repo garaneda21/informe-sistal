@@ -1,0 +1,97 @@
+\definecolor{light-gray}{gray}{0.95}
+
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}  % centrado, sin espacio arriba
+% \titlespacing*{name=\chapter,numberless}{0pt}{0pt}{20pt}  % centrado, sin espacio arriba
+
+\titleformat{\chapter}[display] % Estilo de los capítulos
+  {\bfseries\Large\centering}
+  {\MakeUppercase\chaptername\ \thechapter}
+  {10pt}
+  {\titlerule\MakeUppercase}
+
+\titleformat{name=\chapter,numberless}[block]
+  {\bfseries\Large\centering}        % mismo estilo
+  {}                                % sin número
+  {0pt}                             % separación antes de la línea
+  {\MakeUppercase}                  % título en mayúsculas
+  [\vspace{10pt}\titlerule]         % línea después del título
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{20pt}
+
+\titleformat{\section}[block]
+  {\Large\bfseries}
+  {\thesection}
+  {10pt}
+  {\MakeUppercase}
+
+\titleformat{\subsection}[block]
+  {\large\bfseries}
+  {\thesubsection}
+  {10pt}
+  {\MakeUppercase}
+
+\titleformat{\subsubsection}[block]
+  {\normalsize\bfseries}
+  {\thesubsubsection}
+  {10pt}
+  {\MakeUppercase}
+
+\etocsettocstyle{\chapter*{Índice General}}{}
+
+% 'Capítulo X: ' en Índice
+\renewcommand{\cftchappresnum}{Capítulo~}
+\renewcommand{\cftchapaftersnum}{:\ }
+\renewcommand{\cftchapnumwidth}{6em}
+
+% Colores de Enlaces (Links)
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+% Configuración del estilo de código
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray}\itshape,
+    stringstyle=\color{teal},
+    backgroundcolor=\color{light-gray},
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    breaklines=true,
+    tabsize=4,
+    showstringspaces=false
+    aboveskip=5pt,
+    belowskip=5pt,
+    lineskip=-1pt
+}
+
+% Modificar Headers y Footers
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} % quitar línea superior
+\fancyfoot[R]{\thepage}
+\fancypagestyle{plain}{}
+
+%%% COMANDOS PERSONALIZADOS %%% 
+
+% \sourcefig{nombre}{año}{url} : para insertar una fuente a una figura
+\newcommand{\sourcefig}[3]{%
+  \caption*{%
+    \small\textcolor{gray}{%
+      Fuente: #1%
+      \if\relax\detokenize{#2}\relax\else, #2\fi%
+      \if\relax\detokenize{#3}\relax%
+        % No hay URL → no mostrar "Enlace:"
+      \else%
+        , Enlace: \url{#3}%
+      \fi%
+    }%
+  }%
+}
+% \code{} : para insertar una palabra de texto monoespaciada, como documentación
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
